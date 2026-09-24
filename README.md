@@ -13,4 +13,4 @@
 ## Лицензия
 
 * Скрипты и менеджер управления (`.bat`, PowerShell) распространяются под лицензией [MIT](LICENSE).
-* Исполняемые файлы **AdGuard Home** в каталоге `src/` принадлежат AdGuard Software Ltd. и распространяются под лицензией [GNU General Public License v3.0](src/LICENSE).
+* Исполняемые файлы **AdGuard Home** в каталоге `src/` принадлежат AdGuard Software Ltd. и распространяются под лицензией [GNU General Public License v3.0](src/LICENSE.txt).
