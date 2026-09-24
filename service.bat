@@ -5,12 +5,25 @@ setlocal EnableExtensions EnableDelayedExpansion
 :: ========================================================
 :: win-dns-block-bypass
 :: ========================================================
-if /I "%~1"=="admin" goto admin_ok
-powershell -NoProfile -Command "Start-Process 'cmd.exe' -ArgumentList '/c \"\"%~f0\" admin\"' -Verb RunAs -WorkingDirectory '%~dp0'"
-exit /b
 
-:admin_ok
-cd /d "%~dp0"
+if "%~1"=="admin" (
+    call :check_command chcp
+    call :check_command findstr
+    call :check_command sc
+    call :check_command ipconfig
+    call :check_command powershell
+
+    cd /d "%~dp0"
+    echo Started with admin rights
+) else (
+    call :check_extracted
+    call :check_command powershell
+
+    echo Requesting admin rights...
+    powershell -NoProfile -Command "Start-Process 'cmd.exe' -ArgumentList '/c \"\"%~f0\" admin\"' -Verb RunAs"
+    exit /b
+)
+
 set "VERSION=1.0.2"
 set "AGH_DIR=%~dp0src"
 set "AGH_EXE=%~dp0src\AdGuardHome.exe"
@@ -367,3 +380,24 @@ powershell -NoProfile -Command "$domain='youtube.com'; Write-Host '[1/2] Зап�
 echo.
 pause
 goto menu
+
+:: ========================================================
+:: ВСПОМОГАТЕЛЬНЫЕ ПРОВЕРКИ
+:: ========================================================
+:check_command
+where %1 >nul 2>&1
+if %errorLevel% neq 0 (
+    echo [ОШИБКА] Команда %1 не найдена в системной переменной PATH.
+    pause
+    exit /b 1
+)
+exit /b 0
+
+:check_extracted
+if not exist "%~dp0src\" (
+    echo [ОШИБКА] Папка "src" не найдена!
+    echo Распакуйте архив полностью перед запуском файла.
+    pause
+    exit /b 1
+)
+exit /b 0
