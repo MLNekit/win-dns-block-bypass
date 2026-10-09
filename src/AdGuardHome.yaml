@@ -36,19 +36,19 @@ dns:
     - https://cloudflare-dns.com/dns-query
     - https://dns.adguard-dns.com/dns-query
     - https://dns.google/dns-query
-    - '# Маршрутизация AI-сервисов через xbox-dns.ru'
-    - '[/openai.com/]https://xbox-dns.ru/dns-query'
-    - '[/chatgpt.com/]https://xbox-dns.ru/dns-query'
-    - '[/searchgpt.com/]https://xbox-dns.ru/dns-query'
-    - '[/chat.com/]https://xbox-dns.ru/dns-query'
-    - '[/oaiusercontent.com/]https://xbox-dns.ru/dns-query'
-    - '[/oaistatic.com/]https://xbox-dns.ru/dns-query'
-    - '[/anthropic.com/]https://xbox-dns.ru/dns-query'
-    - '[/claude.ai/]https://xbox-dns.ru/dns-query'
-    - '[/gemini.google.com/]https://xbox-dns.ru/dns-query'
-    - '[/ai.google.dev/]https://xbox-dns.ru/dns-query'
-    - '[/generativelanguage.googleapis.com/]https://xbox-dns.ru/dns-query'
-    - '[/copilot.microsoft.com/]https://xbox-dns.ru/dns-query'
+    - '# Маршрутизация AI-сервисов через dns-ai.ru'
+    - '[/openai.com/]https://dns.dns-ai.ru/dns-query'
+    - '[/chatgpt.com/]https://dns.dns-ai.ru/dns-query'
+    - '[/searchgpt.com/]https://dns.dns-ai.ru/dns-query'
+    - '[/chat.com/]https://dns.dns-ai.ru/dns-query'
+    - '[/oaiusercontent.com/]https://dns.dns-ai.ru/dns-query'
+    - '[/oaistatic.com/]https://dns.dns-ai.ru/dns-query'
+    - '[/anthropic.com/]https://dns.dns-ai.ru/dns-query'
+    - '[/claude.ai/]https://dns.dns-ai.ru/dns-query'
+    - '[/gemini.google.com/]https://dns.dns-ai.ru/dns-query'
+    - '[/ai.google.dev/]https://dns.dns-ai.ru/dns-query'
+    - '[/generativelanguage.googleapis.com/]https://dns.dns-ai.ru/dns-query'
+    - '[/copilot.microsoft.com/]https://dns.dns-ai.ru/dns-query'
   upstream_dns_file: ""
   bootstrap_dns:
     - 9.9.9.9
